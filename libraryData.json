@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Atomic Habits",
+    "Author": "James Clear",
+    "PublicationYear": 2018,
+    "IsAvailable": true
+  },
+  {
+    "Title": "Sapiens: Uma breve hist\u0000ria da humanidade",
+    "Author": "Yuval Noah Harari",
+    "PublicationYear": 2011,
+    "IsAvailable": true
+  },
+  {
+    "Title": "Dune",
+    "Author": "Frank Herbert",
+    "PublicationYear": 1965,
+    "IsAvailable": true
+  },
+  {
+    "Title": "A Guerra dos Tronos : As Cr\u0000nicas de Gelo e Fogo, volume 1",
+    "Author": "George R. R. Martin",
+    "PublicationYear": 1996,
+    "IsAvailable": true
+  }
+]

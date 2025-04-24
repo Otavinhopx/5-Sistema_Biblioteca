@@ -1,11 +1,17 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.IO;
 
 namespace SistemaBiblioteca
 {
     public class Library
     {
-        private List<Book> books = new List<Book>();
+        private List<Book> books;
+        public Library()
+        {
+            books = new List<Book>();
+        }
         public void AddBook(Book book)
         {
             books.Add(book);
@@ -53,6 +59,26 @@ namespace SistemaBiblioteca
 
             Console.WriteLine($"Livro {title} não encontrado");
             return null;
+        }
+
+        private const string FilePath = "libraryData.json";
+
+        public void SaveToFile()
+        {
+            string data = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true});
+            File.WriteAllText(FilePath, data);
+            Console.WriteLine("Dados da biblioteca salvos.");
+        }
+
+        public void LoadFromFile()
+        {
+            if (File.Exists(FilePath))
+            {
+                string data = File.ReadAllText(FilePath);
+                List<Book>? loadedBooks = JsonSerializer.Deserialize<List<Book>>(data);
+                books = loadedBooks ?? new List<Book>();
+                Console.WriteLine("Dados da biblioteca carregados.");
+            }
         }
     }
 }

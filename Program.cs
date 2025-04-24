@@ -7,6 +7,7 @@ namespace SistemaBiblioteca
         static void Main(string[] args)
         {
             Library library = new Library();
+            library.LoadFromFile();
             bool running = true;
 
             while (running)
@@ -33,6 +34,7 @@ namespace SistemaBiblioteca
                         int year = int.Parse(Console.ReadLine()!);
                         Book newBook = new Book(title, author, year);
                         library.AddBook(newBook);
+                        library.SaveToFile();
                         break;
 
                     case "2":
@@ -44,6 +46,7 @@ namespace SistemaBiblioteca
                         string borrowTitle = Console.ReadLine()!;
                         Book? bookToBorrow = library.FindBookByTitle(borrowTitle);
                         bookToBorrow?.Borrow();
+                        library.SaveToFile();
                         break;
 
                     case "4":
@@ -51,12 +54,14 @@ namespace SistemaBiblioteca
                         string returnTitle = Console.ReadLine()!;
                         Book? bookToReturn = library.FindBookByTitle(returnTitle);
                         bookToReturn?.Return();
+                        library.SaveToFile();
                         break;
 
                     case "5":
                         Console.WriteLine("Qual livro deseja remover? ");
                         string removeTitle = Console.ReadLine()!;
                         library.RemoveBookByTitle(removeTitle);
+                        library.SaveToFile();
                         break;
 
                     case "6":

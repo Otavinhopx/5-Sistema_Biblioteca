@@ -9,7 +9,21 @@ namespace SistemaBiblioteca
         public void AddBook(Book book)
         {
             books.Add(book);
-            Console.Writeline($"Livro: {book.Title} adicionado a biblioteca.");
+            Console.WriteLine($"Livro: {book.Title} adicionado a biblioteca.");
+        }
+
+        public void RemoveBookByTitle(string title)
+        {
+            Book bookToRemove = books.FirstOrDefault(b => b.Title.Equals(title, StringComparison.OrdinalIgnoreCase));
+
+            if(bookToRemove != null)
+            {
+                books.Remove(bookToRemove);
+                Console.WriteLine($"Livro {bookToRemove.Title} removido.");
+            }else
+            {
+                Console.WriteLine("Livro não encontrado.");
+            }
         }
 
         public void ListBooks()
@@ -37,7 +51,7 @@ namespace SistemaBiblioteca
                 }
             }
 
-            Console.WriteLine($"Livro "{title}" não encontrado");
+            Console.WriteLine($"Livro {title} não encontrado");
             return null;
         }
     }

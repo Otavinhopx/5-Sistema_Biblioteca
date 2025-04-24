@@ -12,3 +12,4 @@ D:\Roadmap\6 - C# .net\SistemaBiblioteca\obj\Debug\net9.0\refint\SistemaBibliote
 D:\Roadmap\6 - C# .net\SistemaBiblioteca\obj\Debug\net9.0\SistemaBiblioteca.pdb
 D:\Roadmap\6 - C# .net\SistemaBiblioteca\obj\Debug\net9.0\SistemaBiblioteca.genruntimeconfig.cache
 D:\Roadmap\6 - C# .net\SistemaBiblioteca\obj\Debug\net9.0\ref\SistemaBiblioteca.dll
+D:\Roadmap\6 - C# .net\SistemaBiblioteca\obj\Debug\net9.0\SistemaBiblioteca.sourcelink.json

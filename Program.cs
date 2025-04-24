@@ -4,7 +4,7 @@ namespace SistemaBiblioteca
 {
     class Program
     {
-        static void Main(strings[] args)
+        static void Main(string[] args)
         {
             Library library = new Library();
             bool running = true;
@@ -17,7 +17,8 @@ namespace SistemaBiblioteca
                 Console.WriteLine("2 - Ver livros");
                 Console.WriteLine("3 - Emprestar livro");
                 Console.WriteLine("4 - Devolver livro");
-                Console.WriteLine("5 - Fechar");
+                Console.WriteLine("5 - Remover livro");
+                Console.WriteLine("6 - Fechar sistema");
 
                 string? option = Console.ReadLine();
 
@@ -53,6 +54,12 @@ namespace SistemaBiblioteca
                         break;
 
                     case "5":
+                        Console.WriteLine("Qual livro deseja remover? ");
+                        string removeTitle = Console.ReadLine()!;
+                        library.RemoveBookByTitle(removeTitle);
+                        break;
+
+                    case "6":
                         running = false;
                         Console.WriteLine("Fechando sistema, até logo...");
                         break;
@@ -60,6 +67,7 @@ namespace SistemaBiblioteca
                     default:
                         Console.WriteLine("Opcão inválida.");
                         break;
+                }
             }
         }
     }

@@ -22,10 +22,10 @@ namespace SistemaBiblioteca
             if(IsAvailable)
             {
                 IsAvailable = false;
-                Console.Writeline($"Livro:{Title} emprestado com sucesso!")
+                Console.WriteLine($"Livro:{Title} emprestado com sucesso!");
             }
             else{
-                Console.Writeline($"Erro! O livro:{Title} já está emprestado")
+                Console.WriteLine($"Erro! O livro:{Title} já está emprestado");
             }
         }
 
@@ -34,18 +34,18 @@ namespace SistemaBiblioteca
             if(!IsAvailable)
             {
                 IsAvailable = true;
-                Console.Writeline($"Livro:{Title} devolvido com sucesso!")
+                Console.WriteLine($"Livro:{Title} devolvido com sucesso!");
             }else
             {
-                Console.Writeline($"Erro! O livro:{Title} não foi emprestado")
+                Console.WriteLine($"Erro! O livro:{Title} não foi emprestado");
             }
         }
 
         public void DisplayInfo()
         {
             string status = IsAvailable ? "Available" : "Borrowed";
-            Console.Writeline($"Title: {Title} | Author: {Author} | Year: {PublicationYear} | Status: {status}");
-            
+            Console.WriteLine($"Titulo: {Title} | Autor: {Author} | Ano de publicação: {PublicationYear} | Status: {status}");
+
         }
     }
 }
